@@ -65,3 +65,9 @@ The goal of markup_engine is to separate rendering logic from content structure,
 
 ### Contributing
 Open to contributions, suggestions, and new format implementations! PRs welcome.
+
+## Security Warning
+This engine **does not sanitize or escape input**. If you're rendering user-provided strings
+(e.g., lyrics, titles, or section names) to HTML, you are at risk of **HTML injection**.
+You are responsible for escaping content appropriately when using `HtmlEngine`.
+Consider using a crate like [`ammonia`](https://docs.rs/ammonia/latest/ammonia/) or `html_escape`.
