@@ -9,4 +9,5 @@ pub trait MarkupEngine {
     fn non_breaking_space(&self) -> String;
 
     fn pre_block(&self, text: &str) -> String;
+
 }
