@@ -30,4 +30,12 @@ impl MarkupEngine for MarkdownEngine {
     fn line_segment(&self, text: &str) -> String {
         text.to_string()
     }
+
+    fn non_breaking_space(&self) -> String {
+        " ".to_string()
+    }
+    
+    fn pre_block(&self, text: &str) -> String {
+        format!("```\n{}\n```", text)
+    }
 }

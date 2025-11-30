@@ -6,4 +6,7 @@ pub trait MarkupEngine {
     fn link(&self, text: &str, url: &str) -> String;
     fn linebreak(&self) -> String;
     fn line_segment(&self, text: &str) -> String;
+    fn non_breaking_space(&self) -> String;
+
+    fn pre_block(&self, text: &str) -> String;
 }
