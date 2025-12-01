@@ -7,8 +7,6 @@ pub trait MarkupEngine {
     fn linebreak(&self) -> String;
     fn line_segment(&self, text: &str) -> String;
     fn non_breaking_space(&self) -> String;
-
     fn pre_block(&self, text: &str) -> String;
-
     fn list(&self, ordered: bool, items: &[&str]) -> String;
 }
