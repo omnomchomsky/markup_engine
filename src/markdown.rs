@@ -38,5 +38,19 @@ impl MarkupEngine for MarkdownEngine {
     fn pre_block(&self, text: &str) -> String {
         format!("```\n{}\n```", text)
     }
-    
+
+    fn list(&self, ordered: bool, items: &[&str]) -> String {
+        if ordered {
+            items
+                .iter()
+                .enumerate()
+                .map(|(i, item)| format!("{}. {}\n", i + 1, item))
+                .collect()
+        } else {
+            items
+                .iter()
+                .map(|item| format!("- {}\n", item))
+                .collect()
+        }
+    }
 }

@@ -42,6 +42,28 @@ impl MarkupEngine for HtmlEngine {
     fn linebreak(&self) -> String {
         "<br/>".to_string()
     }
+
+    fn list(&self, ordered: bool, items: &[&str]) -> String {
+        let mut out = String::new();
+
+        if ordered {
+            out.push_str("<ol>\n");
+        } else {
+            out.push_str("<ul>\n");
+        }
+
+        for item in items {
+            out.push_str(&format!("  <li>{}</li>\n", item));
+        }
+
+        if ordered {
+            out.push_str("</ol>\n");
+        } else {
+            out.push_str("</ul>\n");
+        }
+
+        out
+    }
 }
 
 fn escape_html(text: &str) -> String {

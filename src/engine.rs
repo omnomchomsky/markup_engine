@@ -10,4 +10,5 @@ pub trait MarkupEngine {
 
     fn pre_block(&self, text: &str) -> String;
 
+    fn list(&self, ordered: bool, items: &[&str]) -> String;
 }
