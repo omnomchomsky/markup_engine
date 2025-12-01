@@ -1,5 +1,22 @@
 [package]
 name = "markup_engine"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+authors = ["Merrick Young <merrick.young@gmail.com>"]
+description = "Zero-dependency, trait-based, ultra-lightweight markup renderer (Markdown + HTML + HTML + pluggable). Born from LeadSheetML, useful anywhere."
+documentation = "https://docs.rs/markup_engine"
+readme = "README.md"
+homepage = "https://github.com/omnomchomsky/markup_engine"
+repository = "https://github.com/omnomchomsky/markup_engine"
+license = "MIT"
+keywords = ["markup", "markdown", "html", "no-std", "renderer"]
+categories = ["text-processing", "rendering", "no-std"]
+exclude = [".github/*", "examples/*"]
 
+# This crate has no dependencies by design
+[dependencies]
+
+[features]
+default = ["std"]
+std = []          # enables String allocations, fmt, etc. (on by default)
+alloc = []
