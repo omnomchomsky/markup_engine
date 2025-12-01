@@ -11,7 +11,7 @@ repository = "https://github.com/omnomchomsky/markup_engine"
 license = "MIT"
 keywords = ["markup", "markdown", "html", "no-std", "renderer"]
 categories = ["text-processing", "rendering", "no-std"]
-exclude = [".github/*", "examples/*"]
+exclude = [".github/*", "examples/*", '.idea/*']
 
 # This crate has no dependencies by design
 [dependencies]
