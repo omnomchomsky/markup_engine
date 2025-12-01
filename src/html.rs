@@ -53,7 +53,7 @@ impl MarkupEngine for HtmlEngine {
         }
 
         for item in items {
-            out.push_str(&format!("  <li>{}</li>\n", item));
+            out.push_str(&format!("  <li>{}</li>\n", escape_html(item)));
         }
 
         if ordered {
